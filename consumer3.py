@@ -128,4 +128,4 @@ conf2 = {'bootstrap.servers': kafka_broker, 'group.id': 'bar', 'enable.auto.comm
 
 consumer = Consumer(conf2)
 
-basic_consume_loop(consumer, ['MohamedAdlyServer4'])
+basic_consume_loop(consumer, ['Topic1'])
