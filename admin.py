@@ -6,11 +6,10 @@ kafka_broker = "127.0.0.1:29092"
 conf = {'bootstrap.servers': kafka_broker}
 ac = AdminClient(conf)
 
-me = 'MohamedAdlyServer5'
 
-topic = me
 
-res = ac.create_topics([NewTopic(topic, num_partitions=3)])
+res = ac.create_topics([NewTopic("Topic1", num_partitions=3), NewTopic("Topic2", num_partitions=3)])
 
-res[topic].result()
+res["Topic1"].result()
 
+res["Topic2"].result()

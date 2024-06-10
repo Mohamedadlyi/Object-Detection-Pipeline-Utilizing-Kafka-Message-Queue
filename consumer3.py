@@ -72,7 +72,7 @@ def detect_obj(image_path):
     return label
 
 
-me = "mohamed-elawadi-1"
+me = "MohamedAdly"
 # kafka_broker = '34.68.55.43:9094,34.136.142.41:9094,34.170.19.136:9094'
 kafka_broker = "127.0.0.1:29092"
 
@@ -80,7 +80,7 @@ conf = { 'bootstrap.servers': kafka_broker, 'client.id': me}
 
 producer = Producer (conf)
 
-topic = "MohamedAdlyServer5"
+topic = "Topic2"
 
 
 def produce_msg(id, filepath, label):
@@ -124,7 +124,7 @@ def shutdown():
     running = False
 
 
-conf2 = {'bootstrap.servers': kafka_broker, 'group.id': 'foo22', 'enable.auto.commit': 'True', 'auto.offset.reset': 'earliest'}
+conf2 = {'bootstrap.servers': kafka_broker, 'group.id': 'bar', 'enable.auto.commit': 'True', 'auto.offset.reset': 'earliest'}
 
 consumer = Consumer(conf2)
 

@@ -8,17 +8,16 @@ kafka_broker = "127.0.0.1:29092"
 admin_client = AdminClient({'bootstrap.servers': kafka_broker})
 
 topic_metadata = admin_client.list_topics(timeout=10)
-for k, v in topic_metadata.topics.items():
-    print(k, v, len(topic_metadata.topics[k].partitions))
-topic_name = 'MohamedAdlyMP'
-to2 = "MohamedAdly"
+
+topic_name = 'Topic1'
+to2 = "Topic2"
 
 if  topic_name in topic_metadata.topics:
     partitions = topic_metadata.topics[topic_name].partitions
     num_partitions = len(partitions)
     print(f"Number of partitions for topic '{topic_name}': {num_partitions}")
 
-elif  to2 in topic_metadata.topics:
+if  to2 in topic_metadata.topics:
     partitions = topic_metadata.topics[to2].partitions
     num_partitions = len(partitions)
     print(f"Number of partitions for topic '{to2}': {num_partitions}")
